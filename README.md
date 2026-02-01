@@ -192,15 +192,9 @@ This project demonstrates how to:
 * Separate **decision-making from mechanics**
 * Build **AI-ready environments** from day one
 
-Not just a game — a **foundation**.
+Not just a game a **foundation**.
 
 ---
 
-🔥 **This README is now portfolio-grade and interview-ready.**
-If you want next:
 
-* a **LinkedIn post**
-* a **resume bullet**
-* or a **“Why I built this” interview script**
 
-Just say the word.
