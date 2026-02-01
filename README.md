@@ -1,6 +1,4 @@
 
-
-```md
 # 🐍 Snake AI (Clean Architecture)
 
 A **deterministic Snake simulation engine** built with **clean architecture principles** and **pluggable controllers**, designed as an **AI-ready environment** rather than a simple game clone.
@@ -182,6 +180,7 @@ This project demonstrates how to:
 Not just a game,  a **foundation**.
 
 ```
+
 
 
 
