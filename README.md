@@ -11,17 +11,17 @@ This project demonstrates how to build **maintainable, testable, and extensible 
 
 Most Snake implementations tightly couple:
 
-- input handling  
-- game logic  
-- rendering  
-- timing
+* input handling
+* game logic
+* rendering
+* timing
 
 This repository intentionally **separates concerns** so the engine can support:
 
-- Human players  
-- Heuristic AI agents  
-- Future ML / RL agents  
-- Deterministic replay and simulation
+* Human players
+* Heuristic AI agents
+* Future ML / RL agents
+* Deterministic replay and simulation
 
 It is designed as a **simulation engine first**, game second.
 
@@ -29,23 +29,26 @@ It is designed as a **simulation engine first**, game second.
 
 ## ✨ Key Features
 
-- ✅ **Deterministic tick-based simulation** (engine ≠ FPS)
-- ✅ **Clean Architecture Layering**
-  - `state` → pure data only  
-  - `systems` → rules & mechanics  
-  - `engine` → orchestration & timing  
-  - `input` → controllers (Human / AI)  
-  - `render` → read-only visualization  
-- ✅ **Hot-swappable controllers**
-  - Press **`T`** to switch **Human ↔ AI** mid-game
-- ✅ **Heuristic AI controller**
-  - Policy-based (no randomness)
-  - Collision-aware
-  - Food-seeking behavior
-- ✅ **Renderer contains zero game logic**
-- ✅ **Pause-safe & restart-safe**
-- ✅ **AI / RL-ready environment**
-- ✅ **Unit-tested core systems**
+* ✅ **Deterministic tick-based simulation** (engine ≠ FPS)
+* ✅ **Clean Architecture Layering**
+
+  * `state` → pure data only
+  * `systems` → rules & mechanics
+  * `engine` → orchestration & timing
+  * `input` → controllers (Human / AI)
+  * `render` → read-only visualization
+* ✅ **Hot-swappable controllers**
+
+  * Press **`T`** to switch **Human ↔ AI** mid-game
+* ✅ **Heuristic AI controller**
+
+  * Policy-based (no randomness)
+  * Collision-aware
+  * Food-seeking behavior
+* ✅ **Renderer contains zero game logic**
+* ✅ **Pause-safe & restart-safe**
+* ✅ **AI / RL-ready environment**
+* ✅ **Unit-tested core systems**
 
 ---
 
@@ -55,36 +58,62 @@ It is designed as a **simulation engine first**, game second.
   <img src="docs/Snake%20diagram.png" alt="Snake AI Clean Architecture Diagram" width="900"/>
 </p>
 
-The diagram above shows how the engine orchestrates inputs, systems, and state into a deterministic simulation with a clean separation between logic and rendering.
+The diagram above illustrates how inputs, systems, and state are orchestrated by a deterministic engine, while rendering remains a pure read-only concern.
+
+---
+
+## 🎥 Controller Demos
+
+This project supports **hot-swappable controllers** that can be changed **at runtime** without restarting the engine.
+
+### 🧑 Human Controller
+
+Manual control using keyboard input, demonstrating direct human interaction with the deterministic simulation.
+
+📹 **Watch demo:**
+[Human Controller Demo](docs/Human-controller.mp4)
+
+---
+
+### 🤖 AI Controller
+
+A deterministic, heuristic-based AI that navigates toward food while avoiding walls and self-collisions.
+
+📹 **Watch demo:**
+[AI Controller Demo](docs/AI-controller.mp4)
+
+---
+
+💡 Press **`T`** during gameplay to toggle between **Human** and **AI** controllers in real time.
 
 ---
 
 ## 🎮 Controls
 
-| Key | Action |
-|-----|--------|
-| Arrow Keys | Move (Human controller) |
-| **T** | Toggle Human ↔ AI controller |
-| **R** | Restart after game over |
-| **ESC** | Quit |
+| Key        | Action                       |
+| ---------- | ---------------------------- |
+| Arrow Keys | Move (Human controller)      |
+| **T**      | Toggle Human ↔ AI controller |
+| **R**      | Restart after game over      |
+| **ESC**    | Quit                         |
 
 ---
 
 ## 🤖 AI Controller
 
-The AI controller operates **deterministically** and follows a simple, transparent policy:
+The AI controller operates **deterministically** and follows a transparent policy:
 
-- Evaluates all possible movement directions
-- Filters out unsafe moves (walls, self-collision)
-- Chooses the move that minimizes **Manhattan distance** to food
-- Produces identical outcomes given identical state
+* Evaluates all possible movement directions
+* Filters out unsafe moves (walls, self-collision)
+* Selects the move minimizing **Manhattan distance** to food
+* Produces identical outcomes given identical state
 
 This design makes it trivial to:
 
-- Replace heuristics with ML models  
-- Wrap with reinforcement learning  
-- Collect trajectories for training  
-- Support explainable behavior
+* Replace heuristics with ML models
+* Wrap the environment with reinforcement learning
+* Collect trajectories for training
+* Support explainable decision-making
 
 ---
 
@@ -92,9 +121,9 @@ This design makes it trivial to:
 
 Unit tests cover:
 
-- Collision detection  
-- Movement logic  
-- Core system behavior
+* Collision detection
+* Movement logic
+* Core system behavior
 
 Tests validate **engine correctness independently of rendering**, reinforcing the simulation-first design.
 
@@ -103,14 +132,15 @@ Tests validate **engine correctness independently of rendering**, reinforcing th
 ## 🚀 Getting Started
 
 ### Requirements
-- Python **3.10+**
-- `pygame`
+
+* Python **3.10+**
+* `pygame`
 
 ### Install
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
 ### Run
 
@@ -164,21 +194,13 @@ This project demonstrates how to:
 
 Not just a game — a **foundation**.
 
+---
 
+🔥 **This README is now portfolio-grade and interview-ready.**
+If you want next:
 
+* a **LinkedIn post**
+* a **resume bullet**
+* or a **“Why I built this” interview script**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Just say the word.
