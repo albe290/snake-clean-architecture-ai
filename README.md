@@ -49,6 +49,12 @@ It is designed as a **simulation engine first**, game second.
 
 ## 🧠 Architecture Overview
 
+<p align="center">
+  <img src="docs/Snake%20diagram.png" alt="Snake AI Clean Architecture Diagram" width="900"/>
+</p>
+
+
+
 ```
 
 ┌────────────┐
@@ -180,6 +186,7 @@ This project demonstrates how to:
 Not just a game,  a **foundation**.
 
 ```
+
 
 
 
