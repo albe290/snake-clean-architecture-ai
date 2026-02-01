@@ -54,33 +54,6 @@ It is designed as a **simulation engine first**, game second.
 </p>
 
 
-
-```
-
-┌────────────┐
-│   Input    │  ← Human / AI Controllers
-└─────┬──────┘
-│
-┌─────▼──────┐
-│  Engine    │  ← Deterministic tick loop
-└─────┬──────┘
-│
-┌─────▼───────────────┐
-│     Systems         │
-│  - Movement         │
-│  - Collision        │
-│  - Spawning         │
-│  - Scoring          │
-└─────┬───────────────┘
-│
-┌─────▼──────┐
-│   State    │  ← Pure data (no logic)
-└─────┬──────┘
-│
-┌─────▼──────┐
-│  Renderer  │  ← Read-only visualization
-└────────────┘
-
 ````
 
 ---
@@ -186,6 +159,7 @@ This project demonstrates how to:
 Not just a game,  a **foundation**.
 
 ```
+
 
 
 
