@@ -3,22 +3,24 @@
 
 A **deterministic Snake simulation engine** built with **clean architecture principles** and **pluggable controllers**, designed as an **AI-ready environment** rather than a simple game clone.
 
-This project demonstrates how to build **maintainable, testable, and extensible systems** where game logic, rendering, and decision-making are fully decoupled.
+This project demonstrates how to build **maintainable, testable, and extensible systems** where game logic, rendering, timing, and decision-making are fully decoupled.
 
 ---
 
 ## 🎯 Why This Project Exists
 
 Most Snake implementations tightly couple:
-- input handling
-- game logic
-- rendering
+
+- input handling  
+- game logic  
+- rendering  
 - timing
 
-This project **intentionally separates concerns** so the engine can support:
-- Human players
-- Heuristic AI agents
-- Future ML / RL agents
+This repository intentionally **separates concerns** so the engine can support:
+
+- Human players  
+- Heuristic AI agents  
+- Future ML / RL agents  
 - Deterministic replay and simulation
 
 It is designed as a **simulation engine first**, game second.
@@ -28,22 +30,22 @@ It is designed as a **simulation engine first**, game second.
 ## ✨ Key Features
 
 - ✅ **Deterministic tick-based simulation** (engine ≠ FPS)
-- ✅ **Clean Architecture**
-  - `state` → pure data
-  - `systems` → rules & mechanics
-  - `engine` → orchestration
-  - `input` → controllers (Human / AI)
-  - `render` → read-only visualization
+- ✅ **Clean Architecture Layering**
+  - `state` → pure data only  
+  - `systems` → rules & mechanics  
+  - `engine` → orchestration & timing  
+  - `input` → controllers (Human / AI)  
+  - `render` → read-only visualization  
 - ✅ **Hot-swappable controllers**
-  - Press `T` to switch **Human ↔ AI** mid-game
-- ✅ **AI controller**
-  - Heuristic, policy-based (no randomness)
+  - Press **`T`** to switch **Human ↔ AI** mid-game
+- ✅ **Heuristic AI controller**
+  - Policy-based (no randomness)
   - Collision-aware
   - Food-seeking behavior
-- ✅ **Renderer contains ZERO game logic**
-- ✅ **Restart & pause-safe**
+- ✅ **Renderer contains zero game logic**
+- ✅ **Pause-safe & restart-safe**
 - ✅ **AI / RL-ready environment**
-- ✅ **Unit tests for core systems**
+- ✅ **Unit-tested core systems**
 
 ---
 
@@ -53,15 +55,14 @@ It is designed as a **simulation engine first**, game second.
   <img src="docs/Snake%20diagram.png" alt="Snake AI Clean Architecture Diagram" width="900"/>
 </p>
 
-
-````
+The diagram above shows how the engine orchestrates inputs, systems, and state into a deterministic simulation with a clean separation between logic and rendering.
 
 ---
 
 ## 🎮 Controls
 
 | Key | Action |
-|----|-------|
+|-----|--------|
 | Arrow Keys | Move (Human controller) |
 | **T** | Toggle Human ↔ AI controller |
 | **R** | Restart after game over |
@@ -71,37 +72,42 @@ It is designed as a **simulation engine first**, game second.
 
 ## 🤖 AI Controller
 
-The AI controller:
-- Evaluates all possible directions
+The AI controller operates **deterministically** and follows a simple, transparent policy:
+
+- Evaluates all possible movement directions
 - Filters out unsafe moves (walls, self-collision)
-- Selects the move minimizing **Manhattan distance** to food
-- Operates deterministically (same input → same outcome)
+- Chooses the move that minimizes **Manhattan distance** to food
+- Produces identical outcomes given identical state
 
 This design makes it trivial to:
-- Replace with an ML model
-- Wrap with reinforcement learning
-- Collect trajectories for training
+
+- Replace heuristics with ML models  
+- Wrap with reinforcement learning  
+- Collect trajectories for training  
+- Support explainable behavior
 
 ---
 
 ## 🧪 Tests
 
 Unit tests cover:
-- Collision detection
-- Movement logic
+
+- Collision detection  
+- Movement logic  
 - Core system behavior
 
-Tests validate **engine correctness independent of rendering**.
+Tests validate **engine correctness independently of rendering**, reinforcing the simulation-first design.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Requirements
-- Python 3.10+
-- pygame
+- Python **3.10+**
+- `pygame`
 
 ### Install
+
 ```bash
 pip install -r requirements.txt
 ````
@@ -118,15 +124,15 @@ python main.py
 
 ```
 .
-├── engine/        # Game loop & timing
-├── input/         # Human & AI controllers
-├── render/        # Pygame renderer (read-only)
-├── state/         # Game state (pure data)
-├── systems/       # Game mechanics
-├── tests/         # Unit tests
-├── utils/         # Shared utilities & types
-├── config.py      # Configuration
-└── main.py        # Entry point
+├── engine/     # Game loop & deterministic timing
+├── input/      # Human & AI controllers
+├── render/     # Pygame renderer (read-only)
+├── state/      # Game state (pure data)
+├── systems/    # Game mechanics
+├── tests/      # Unit tests
+├── utils/      # Shared utilities & types
+├── config.py   # Configuration
+└── main.py     # Entry point
 ```
 
 ---
@@ -154,11 +160,14 @@ This project demonstrates how to:
 
 * Design systems for **change**
 * Separate **decision-making from mechanics**
-* Build AI-ready environments from day one
+* Build **AI-ready environments** from day one
 
-Not just a game,  a **foundation**.
+Not just a game — a **foundation**.
 
 ```
+
+
+
 
 
 
