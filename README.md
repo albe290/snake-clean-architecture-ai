@@ -62,25 +62,25 @@ The diagram above illustrates how inputs, systems, and state are orchestrated by
 
 ---
 
-## 🎥 Controller Demos
+## 🎥 Live Demos
 
-This project supports **hot-swappable controllers** that can be changed **at runtime** without restarting the engine.
+### 🤖 AI Controller (Deterministic Policy)
+<p align="center">
+  <img src="docs/ai-controller.gif" width="720" />
+</p>
 
-### 🧑 Human Controller
-
-Manual control using keyboard input, demonstrating direct human interaction with the deterministic simulation.
-
-📹 **Watch demo:**
-[Human Controller Demo](docs/Human-controller.mp4)
+The AI controller makes deterministic, policy-driven decisions based on
+the current game state. No randomness, no hidden state.
 
 ---
 
-### 🤖 AI Controller
+### 🧑 Human Controller
+<p align="center">
+  <img src="docs/human-controller.gif" width="720" />
+</p>
 
-A deterministic, heuristic-based AI that navigates toward food while avoiding walls and self-collisions.
-
-📹 **Watch demo:**
-[AI Controller Demo](docs/AI-controller.mp4)
+Manual keyboard control using the same game engine and render pipeline,
+demonstrating clean separation between input and logic.
 
 ---
 
@@ -195,6 +195,7 @@ This project demonstrates how to:
 Not just a game a **foundation**.
 
 ---
+
 
 
 
